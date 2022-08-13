@@ -19,12 +19,12 @@ router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/index.html"));
   //   res.sendFile("./views/index.html", {root : __dirname});
 });
-router.get("/users/register", (req, res) => {
-  res.sendFile(path.join(__dirname, "./views/register.html"));
-});
-router.get("/users/login", (req, res) => {
-  res.sendFile(path.join(__dirname, "./views/login.html"));
-});
+// router.get("/users/register", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./views/register.html"));
+// });
+// router.get("/users/login", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./views/login.html"));
+// });
 app.listen(PORT, (err) => {
   if (err) throw err;
   console.log(`Sever http://localhost:${PORT} is running`);
