@@ -15,6 +15,17 @@ app.use(
     extended: true,
   })
 );
+
+app.use(cors({
+    origin: ['http://127.0.0.1:3000', 'http://localhost:3000'],
+    credentials: true
+ }));
+
+  fetch(url, 
+  {
+  credentials: 'include'
+  }) 
+
 router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/index.html"));
   //   res.sendFile("./views/index.html", {root : __dirname});
