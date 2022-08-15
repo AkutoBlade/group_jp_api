@@ -9,6 +9,13 @@ const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 const PORT = process.env.PORT || 3000;
+
+
+app.use(cors({
+  origin: ['http://127.0.0.1:8080', 'http://localhost:8080'],
+  credentials: true
+}));
+
 app.use(
   router,
   express.json(),
@@ -16,11 +23,6 @@ app.use(
     extended: true,
   })
 );
-
-app.use(cors({
-    origin: ['http://127.0.0.1:8080', 'http://localhost:8080'],
-    credentials: true
- }));
 
 router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/index.html"));
