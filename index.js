@@ -106,7 +106,7 @@ app.post('/users/login',bodyParser.json(),(req,res) => {
           //   msg: results,
           //   token
           // })
-          res.redirect('/')
+          res.status(200).send("Logged in");
       });
       }
     }
